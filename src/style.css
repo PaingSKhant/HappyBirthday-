@@ -1,0 +1,28 @@
+body {
+  display: flex;
+  border: 2px solid red;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+}
+#menu {
+  padding-top: 65px;
+  width: 250px;
+  background-color: rgb(26, 125, 218);
+  color: white;
+  text-align: center;
+}
+button {
+  color: white;
+}
+
+#mainScreen {
+  flex-grow: 1;
+  background-color: gray;
+}
+
+.title {
+  padding: 50px;
+  text-align: center;
+  color: red;
+}
