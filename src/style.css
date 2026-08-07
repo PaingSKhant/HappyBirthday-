@@ -1,28 +1,225 @@
 body {
-  display: flex;
-  border: 2px solid red;
   margin: 0;
+  width: 99vw;
+  height: 98vh;
+  background-color: #ffe5ec;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Fredoka", sans-serif;
+  color: #4a3e3d;
+}
+
+#main-menu {
+  margin: 0;
+
+  width: 70%;
+  height: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#penguin {
+  width: 350px;
+}
+
+#description {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+h1 {
+  font-family: "Dancing Script", cursive;
+  font-size: 3rem;
+  color: #8b263e;
+}
+
+#description p {
+  font-size: 1.25rem;
+  color: #8b263e;
+  margin-top: -10px;
+  font-weight: 500;
+}
+
+#sign-in {
+  background: linear-gradient(135deg, #ff758f, #ff4d6d);
+  color: #ffffff;
+  font-family: "Fredoka", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 25px;
+  box-shadow: 0 4px 15px rgba(255, 77, 109, 0.3);
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  margin-top: 20px;
+}
+
+/* Hover effect */
+#sign-in:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 6px 20px rgba(255, 77, 109, 0.45);
+}
+
+/* Click/Active effect */
+#sign-in:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.heart {
+  position: absolute;
+  pointer-events: none;
+  font-size: 1.5rem;
+  animation: burst 1s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+  z-index: 9999;
+}
+
+@keyframes burst {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0.3);
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    /* Moves outward along custom X and Y coordinates calculated in JS */
+    transform: translate(calc(-50% + var(--x)), calc(-50% + var(--y)))
+      scale(1.2);
+  }
+}
+.hidden {
+  display: none !important;
+}
+
+/* Modal Overlay Background */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
-}
-#menu {
-  padding-top: 65px;
-  width: 250px;
-  background-color: rgb(26, 125, 218);
-  color: white;
-  text-align: center;
-}
-button {
-  color: white;
+  background: rgba(89, 13, 34, 0.4);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-out forwards;
 }
 
-#mainScreen {
-  flex-grow: 1;
-  background-color: gray;
+/* Modal Card Box */
+.modal-card {
+  background: #ffffff;
+  padding: 30px 35px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  width: 90%;
+  max-width: 380px;
+  text-align: center;
+  position: relative;
+  animation: scaleUp 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
 
-.title {
-  padding: 50px;
-  text-align: center;
-  color: red;
+/* Close Button (X) */
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #8b263e;
+  cursor: pointer;
+}
+
+.modal-card h2 {
+  font-family: "Dancing Script", cursive;
+  font-size: 2.2rem;
+  color: #8b263e;
+  margin-bottom: 5px;
+}
+
+.modal-subtitle {
+  font-size: 0.95rem;
+  color: #6a1b29;
+  margin-bottom: 20px;
+}
+
+/* Inputs & Buttons */
+.input-group {
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 0.85rem;
+  color: #8b263e;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #ffe5ec;
+  border-radius: 12px;
+  font-family: "Fredoka", sans-serif;
+  font-size: 1rem;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.error-msg {
+  color: #d90429;
+  font-size: 0.85rem;
+  margin-bottom: 12px;
+}
+
+#submit-login {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #ff758f, #ff4d6d);
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-family: "Fredoka", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Dynamic Fade Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0.8);
+  }
+  to {
+    transform: scale(1);
+  }
 }
