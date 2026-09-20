@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Fredoka:wght@400;600&family=Gaegu:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>MaMa Happy Birthday</title>
+  <script defer src="main.js"></script></head>
+  <body>
+    <div id="main-menu">
+      <div id="description">
+        <h1>Happy birthday to Aneki</h1>
+        <br />
+        <p>
+          3 years ago, I found someone truly special, and every day since has
+          only proven how lucky I am. You have the sweetest soul, an incredible
+          mind, and a heart so full of love and loyalty. Through every high and
+          low, you've been my safe place and my biggest cheerleader. Thank you
+          for loving me so purely and for being the amazing, brilliant woman you
+          are. I hope today brings you even a fraction of the happiness you give
+          to me every day.
+        </p>
+        <button id="sign-in">Open My Gift 🎁</button>
+      </div>
+      <div id="main-menu-photo">
+        <img
+          src="0a9726ccfe061e66ee77.png"
+          id="penguin"
+          alt="paing-as-penguin"
+        />
+      </div>
+    </div>
+
+    <div id="gift-page" class="hidden">
+      <div id="floating-bg"></div>
+
+      <div id="gift-content">
+        <div id="age-counter">
+          <p id="age-label">
+            Aneki has been amazing for (oi definitely not a death counter😐)
+          </p>
+          <div id="age-values">
+            <div class="age-unit">
+              <span id="age-years">0</span><small>years</small>
+            </div>
+            <div class="age-unit">
+              <span id="age-days">0</span><small>days</small>
+            </div>
+            <div class="age-unit">
+              <span id="age-hours">0</span><small>hours</small>
+            </div>
+            <div class="age-unit">
+              <span id="age-minutes">0</span><small>min</small>
+            </div>
+            <div class="age-unit">
+              <span id="age-seconds">0</span><small>sec</small>
+            </div>
+          </div>
+        </div>
+
+        <div id="slideshow">
+          <img id="slide-photo" alt="memory photo" />
+          <p id="slide-caption"></p>
+          <div id="slide-dots"></div>
+        </div>
+      </div>
+    </div>
+    <audio id="bg-music" loop></audio>
+  </body>
+</html>
