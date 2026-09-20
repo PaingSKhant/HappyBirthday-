@@ -1,14 +1,14 @@
+import { startGiftExperience } from "./gift.js";
+
 export function createHeart(x, y) {
   const heart = document.createElement("div");
   heart.classList.add("heart");
 
-  // Array of cute emojis to pick from randomly
-  const heartTypes = ["💖", "💕", "❤️", "🌸", "✨", "💗"];
+  const heartTypes = ["💖", "💕", "❤️", "🌸", "oi", "💗"];
   heart.innerHTML = heartTypes[Math.floor(Math.random() * heartTypes.length)];
 
-  // Random angle (0 to 360 degrees) and distance
   const angle = Math.random() * Math.PI * 2;
-  const distance = 80 + Math.random() * 100; // Distance traveled outward in pixels
+  const distance = 80 + Math.random() * 100;
 
   const destinationX = Math.cos(angle) * distance + "px";
   const destinationY = Math.sin(angle) * distance + "px";
@@ -27,12 +27,10 @@ export function createHeart(x, y) {
 }
 
 export function createDynamicModal() {
-  // Create overlay
   const overlay = document.createElement("div");
   overlay.id = "login-modal";
   overlay.className = "modal-overlay";
 
-  // Build modal inner HTML
   overlay.innerHTML = `
     <div class="modal-card">
       <button id="close-modal" class="close-btn">&times;</button>
@@ -76,9 +74,8 @@ export function createDynamicModal() {
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     if (passwordInput.value.trim() === "aneki") {
-      alert("Correct! Welcome to your birthday surprise! 🎉");
       removeModal(overlay);
-      // Next step: Call a function here to render the main birthday gift view dynamically!
+      startGiftExperience();
     } else {
       errorMsg.classList.remove("hidden");
     }
